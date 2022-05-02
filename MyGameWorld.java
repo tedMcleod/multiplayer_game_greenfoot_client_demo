@@ -10,9 +10,8 @@ public class MyGameWorld extends GameWorld {
 
     public MyGameWorld() {
         super(600, 400, 1, false);
+        setPaintOrder(Player.class, OtherPlayer.class, Shot.class, OtherShot.class);
     }
     
-    public void act() {
-        
-    }
+    
 }

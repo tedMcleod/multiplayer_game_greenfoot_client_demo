@@ -7,11 +7,13 @@ public abstract class GameWorld extends World {
     public GameWorld(int width, int height, int cellSize, boolean bounded) {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(width, height, cellSize, bounded);
+    }
+    
+    public void connect(String ipAddress, int port) {
         client = new MyGameClient("localhost", 1234);
         client.setWorld(this);
         Thread clientThread = new Thread(client);
         clientThread.start();
-        setPaintOrder(Player.class, OtherPlayer.class, Shot.class, OtherShot.class);
     }
     
     public MyGameClient getClient() {
