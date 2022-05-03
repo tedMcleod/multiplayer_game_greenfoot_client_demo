@@ -25,4 +25,12 @@ public class Shot extends LocalActor {
             }
         }
     }
+    
+    @Override
+    public void addedToWorld(World world) {
+        GameWorld gw = getWorldOfType(GameWorld.class);
+        if (gw != null) {
+            gw.getClient().sendMessage("ADD_SHOT " + getId() + " " + getX() + " " + getY());
+        }
+    }
 }

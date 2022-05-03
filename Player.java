@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends LocalActor {
     
+    private int SHOT_CD = 60;
     private int shotCooldown = 0;
     
     public Player(String id) {
@@ -29,7 +30,7 @@ public class Player extends LocalActor {
         }
         
         if (Greenfoot.isKeyDown("space") && shotCooldown == 0) {
-            shotCooldown = 20;
+            shotCooldown = SHOT_CD;
             fireShot();
         }
         if (getX() < 0) {

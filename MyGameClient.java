@@ -67,6 +67,12 @@ public class MyGameClient extends GameClient  {
             if (ga != null) {
                 ga.destroy();
             }
+        } else if (cmd.equals("ADD_SHOT")) {
+            String shotId = scan.next();
+            int x = scan.nextInt();
+            int y = scan.nextInt();
+            OtherShot os = new OtherShot(shotId);
+            gw.addObject(os, x, y);            
         }
     }
 }
