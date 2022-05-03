@@ -18,7 +18,7 @@ public class StartButton extends Actor {
             // create a MyGameClient and set the world to this world
             MyGameWorld gw = new MyGameWorld();
             TitleWorld tw = getWorldOfType(TitleWorld.class);
-            gw.connect(tw.getAddressField().getText(), 1234);
+            gw.connect(tw.getAddressField().getText(), tw.getPortField().getValue());
             Greenfoot.setWorld(gw);
         }
     }

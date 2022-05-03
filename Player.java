@@ -32,6 +32,17 @@ public class Player extends LocalActor {
             shotCooldown = 20;
             fireShot();
         }
+        if (getX() < 0) {
+            setLocation(getWorld().getWidth(), getY());
+        } else if (getX() > getWorld().getWidth()) {
+            setLocation(0, getY());
+        }
+        
+        if (getY() < 0) {
+            setLocation(getX(), getWorld().getHeight());
+        } else if (getY() > getWorld().getHeight()) {
+            setLocation(getX(), 0);
+        }
     }
     
     public void fireShot() {

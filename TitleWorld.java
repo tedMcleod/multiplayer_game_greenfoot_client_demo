@@ -50,4 +50,8 @@ public class TitleWorld extends World {
     public TextField getAddressField() {
         return addressField;
     }
+    
+    public NumberTextField getPortField() {
+        return portField;
+    }
 }
