@@ -10,7 +10,7 @@ public abstract class GameWorld extends World {
     }
     
     public void connect(String ipAddress, int port) {
-        client = new MyGameClient("localhost", 1234);
+        client = new MyGameClient(ipAddress, port);
         client.setWorld(this);
         Thread clientThread = new Thread(client);
         clientThread.start();
