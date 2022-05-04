@@ -54,6 +54,7 @@ public class Player extends LocalActor {
     
     @Override
     public void onDestroy(GameWorld world) {
+        for (Shot s : world.getObjects(Shot.class)) s.destroy();
         Greenfoot.stop();
         Greenfoot.setWorld(new TitleWorld());
         Greenfoot.start();
